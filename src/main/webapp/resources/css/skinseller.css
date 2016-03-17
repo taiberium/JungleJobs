@@ -1,0 +1,68 @@
+
+.block {
+    width: 32%;
+    padding: 0;
+    display: inline-block;
+    vertical-align: middle;
+}
+
+footer, .buy_history {
+    border-top: 1px solid black;
+    min-height: 50px;
+}
+
+.chatFrame {
+    border: 3px double black;
+    min-height: 200px;
+    margin-right: 7%;
+}
+
+.chatConfig {
+    border: 1px solid black;
+    background-color: #111;
+}
+
+footer {
+    margin-top: 20px;
+}
+
+footer {
+    background-color: #111;
+    text-align: right;
+}
+
+select {
+    width: 170px; /* Ширина списка в пикселах */
+}
+
+.item {
+    border: 1px solid black;
+    background-image: url("../pictures/item.png");
+    background-size: 100%;
+    height: 60px;
+    width: 100px;
+    color: #f9ffa7;
+    text-align: left;
+}
+
+body {
+    background-color: #222;
+    color: #9d9d9d;
+}
+
+h3 {
+    color: #bababa;
+}
+
+h4 {
+    color: #afafaf;
+}
+
+.menuButton {
+    font-size: large;
+    margin-top: 10px;
+}
+
+.navbar-inverse {
+    background-color: #111;
+}
