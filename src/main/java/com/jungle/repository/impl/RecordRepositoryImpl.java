@@ -8,9 +8,9 @@ import org.springframework.jdbc.core.JdbcOperations;
 import org.springframework.jdbc.support.rowset.SqlRowSet;
 import org.springframework.stereotype.Repository;
 
-import java.util.ArrayList;
-import java.util.Collections;
 import java.util.List;
+
+import static com.jungle.repository.mapper.RecordRowMapper.mapRecords;
 
 /**
  * Created by User on 16.03.2016.
@@ -18,9 +18,8 @@ import java.util.List;
 @Repository
 public class RecordRepositoryImpl implements RecordRepository {
 
-    protected JdbcOperations jdbcOperations;
-
     private static final String SELECT_FROM_TABLE = "SELECT * FROM record";
+    protected JdbcOperations jdbcOperations;
 
     @Autowired
     public RecordRepositoryImpl(JdbcOperations jdbcOperations) {
@@ -38,18 +37,8 @@ public class RecordRepositoryImpl implements RecordRepository {
                 SELECT_FROM_TABLE,
                 null
         );
-        List<Record> records = new ArrayList<>();
-        while (rowSet.next()) {
-            records.add(
-                    new Record(
-                            rowSet.getInt("id"),
-                            rowSet.getString("title"),
-                            rowSet.getString("content"),
-                            rowSet.getDate("creation_date")
-                    )
-            );
-        }
-        return records;
+
+        return mapRecords(rowSet);
     }
 
     @Override
